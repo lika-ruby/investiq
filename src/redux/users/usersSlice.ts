@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { User } from "firebase/auth";
-import { addOperation } from "./usersOperations";
 
 export interface Operation {
   id: string;

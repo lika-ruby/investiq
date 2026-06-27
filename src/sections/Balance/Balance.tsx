@@ -8,7 +8,7 @@ import { Btn } from "../../components/Button/Button";
 import { updateStartingBalance } from "../../redux/users/usersOperations";
 import { setStartingBalance } from "../../redux/users/usersSlice";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { HomeContainer } from "../../components/HomeContainer/HomeContainer";
 import styles from "./Balance.module.scss";
 

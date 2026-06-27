@@ -142,7 +142,7 @@ export const Chart = ({ category, type, date }: ChartProps) => {
           font: { size: 12 },
           mirror: true,
           labelOffset: -14,
-          crossAlign: "start",
+          crossAlign: "near",
         },
       },
       x: {

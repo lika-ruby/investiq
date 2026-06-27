@@ -1,6 +1,6 @@
 import styles from "./AddItem.module.scss";
 import { Btn } from "../../components/Button/Button.tsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setLoading,
   setOperation,

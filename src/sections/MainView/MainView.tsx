@@ -5,8 +5,11 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { HomeContainer } from "../../components/HomeContainer/HomeContainer";
 import { useEffect, useState } from "react";
 import styles from "./MainView.module.scss";
+type Props = {
+  type: "income" | "expense";
+};
 
-export const MainView = ({ type }) => {
+export const MainView = ({ type }: Props) => {
   const location = useLocation();
 
   const basePath = location.pathname.startsWith("/calculations")
