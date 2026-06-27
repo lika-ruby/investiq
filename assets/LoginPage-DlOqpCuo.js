@@ -1,1 +1,0 @@
-import{T as e,y as t}from"./index-wCplBCvm.js";import{t as n}from"./Bg-B4tjoyyW.js";import{t as r}from"./Auth-C7CrPNUu.js";var i=e(),a=t();function o(){let e=(0,i.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,a.jsxs)(`div`,{style:{position:`relative`},children:[(0,a.jsx)(r,{type:`login`}),(0,a.jsx)(n,{})]}),e[0]=t):t=e[0],t}export{o as default};
