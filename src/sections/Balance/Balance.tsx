@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+
 import {
   selectOperations,
   selectStartingBalance,
 } from "../../redux/users/usersSelectors";
+
 import { Btn } from "../../components/Button/Button";
 import { updateStartingBalance } from "../../redux/users/usersOperations";
 import { setStartingBalance } from "../../redux/users/usersSlice";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
 import { HomeContainer } from "../../components/HomeContainer/HomeContainer";
+
 import styles from "./Balance.module.scss";
 
 type BalanceProps = {
@@ -26,19 +28,16 @@ export const Balance = ({
   page,
 }: BalanceProps) => {
   const dispatch = useDispatch();
+
   const ops = useSelector(selectOperations) ?? [];
   const startBalance = useSelector(selectStartingBalance) ?? 0;
+
   const { income, expense } = ops.reduce(
     (acc, op) => {
       const sum = Number(op.sum) || 0;
 
-      if (op.type === "income") {
-        acc.income += sum;
-      }
-
-      if (op.type === "expense") {
-        acc.expense += sum;
-      }
+      if (op.type === "income") acc.income += sum;
+      if (op.type === "expense") acc.expense += sum;
 
       return acc;
     },
@@ -54,14 +53,11 @@ export const Balance = ({
     if (value.trim() === "") return;
 
     const newBalance = Number(value);
-
     if (isNaN(newBalance)) return;
 
     try {
       await updateStartingBalance(newBalance);
-
       dispatch(setStartingBalance(newBalance));
-
       setValue("");
     } catch (err) {
       console.error(err);
@@ -80,9 +76,12 @@ export const Balance = ({
                   <use href="#bar-chart"></use>
                 </svg>
               </Link>
+
               <div className={styles.void}></div>
+
               <form className={styles.form} onSubmit={handleConfirm}>
                 <p className={styles.balanceTitle}>Баланс:</p>
+
                 <div className={styles.balanceWrap}>
                   <input
                     className={styles.input}
@@ -92,6 +91,7 @@ export const Balance = ({
                     onFocus={() => setValue("")}
                     onChange={(e) => setValue(e.target.value)}
                   />
+
                   <Btn
                     text={"підтвердити"}
                     btnType={"submit"}
@@ -100,6 +100,7 @@ export const Balance = ({
                   />
                 </div>
               </form>
+
               <Link className={styles.nav} to="/calculations">
                 Перейти до розрахунків
                 <svg className={styles.statisticIcon} width="24" height="24">
@@ -117,6 +118,7 @@ export const Balance = ({
                 <use href="#arrow-back"></use>
               </svg>
             </Link>
+
             <div className={styles.wrap}>
               <Link className={styles.nav} to="/">
                 <svg className={styles.backIcon} width="24" height="24">
@@ -124,8 +126,10 @@ export const Balance = ({
                 </svg>
                 Повернутись на головну
               </Link>
+
               <form className={styles.form} onSubmit={handleConfirm}>
                 <p className={styles.balanceTitle}>Баланс:</p>
+
                 <div className={styles.balanceWrap}>
                   <input
                     className={styles.input}
@@ -135,6 +139,7 @@ export const Balance = ({
                     onFocus={() => setValue("")}
                     onChange={(e) => setValue(e.target.value)}
                   />
+
                   <Btn
                     text={"підтвердити"}
                     btnType={"submit"}
@@ -143,6 +148,7 @@ export const Balance = ({
                   />
                 </div>
               </form>
+
               <div className={styles.date}>
                 <button
                   className={styles.arrow}
@@ -153,6 +159,7 @@ export const Balance = ({
                     <use href="#arrow-down"></use>
                   </svg>
                 </button>
+
                 <div className={styles.texts}>
                   <p className={styles.text}>Поточний період</p>
 
