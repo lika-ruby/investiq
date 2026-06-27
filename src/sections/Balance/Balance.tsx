@@ -13,9 +13,9 @@ import { HomeContainer } from "../../components/HomeContainer/HomeContainer";
 import styles from "./Balance.module.scss";
 
 type BalanceProps = {
-  monthOffset?: number;
-  setMonthOffset?: React.Dispatch<React.SetStateAction<number>>;
-  date?: Date | null;
+  monthOffset: number;
+  setMonthOffset: React.Dispatch<React.SetStateAction<number>>;
+  date: Date;
   page: "home" | "calc";
 };
 
