@@ -1,0 +1,29 @@
+@use "../../styles/var.scss" as *;
+
+.chartSect {
+    padding: 20px 0;
+}
+
+.chartWrap {
+    padding: 20px;
+
+    @media (min-width: 768px) {
+        background: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+        padding: 50px 30px;
+    }
+}
+
+.chart {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+// Нові стилі для бездоганного вирівнювання тексту на мобілці
+.mobileChart {
+    canvas {
+        padding-left: 0 !important;
+    }
+}

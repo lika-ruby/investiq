@@ -1,0 +1,196 @@
+@use "../../styles/var.scss" as *;
+
+.container {
+    display: block;
+    width: 100%;
+    height: 346px;
+    overflow-y: scroll;
+    padding-right: 4px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #ff751d transparent;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        display: block;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ff751d;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #df6012;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    display: table;
+}
+
+.head {
+    background-color: #f5f6fb;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.row {
+    border-bottom: 1px solid #f5f6fb;
+}
+
+.data_h {
+    text-align: left;
+    padding: 14px 20px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.data {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.dataSum {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #e7192e;
+}
+
+.del {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #efeff4;
+
+        .icon {
+            fill: #111111;
+        }
+    }
+}
+
+.icon {
+    fill: #a6b1c7;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .container {
+        height: 346px;
+    }
+
+    .container {
+        padding: 12px 16px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        height: 346px;
+        width: 760px;
+    }
+
+    .data {
+        padding: 16px 24px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.name {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.down {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.date {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.category {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sum {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: right;
+}
+
+.income {
+    color: #407946;
+}
+
+.expense {
+    color: #e7192e;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #f5f6fb;
+}

@@ -1,0 +1,78 @@
+@use "../../styles/var.scss" as *;
+
+.sect {
+    padding: 0 0 40px;
+
+    @media screen and (min-width: 768px) {
+        padding: 0 0 30px;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.wrap {
+    border-radius: 20px;
+    box-shadow: 5px 10px 20px 0 rgba(170, 178, 197, 0.4);
+    background: $bg-color;
+    padding: 7px 12px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+        border-radius: 30px;
+        gap: 19px;
+        box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.text {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 14px;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: 19px;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.line {
+    background-color: $line-color;
+    width: 1px;
+    height: 70px;
+
+    @media screen and (min-width: 768px) {
+        height: 36px;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.expense {
+    color: $minus-money-color;
+    letter-spacing: 0.04em;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.income {
+    color: $plus-money-color;
+    letter-spacing: 0.04em;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}

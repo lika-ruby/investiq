@@ -1,0 +1,214 @@
+@use "../../styles/var.scss" as *;
+
+.sect {
+    padding: 62px 0 76px;
+
+    @media screen and (min-width: 768px) {
+        padding: 60px 0 192px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 117px 0 142px;
+    }
+}
+
+.wrapper {
+    @media screen and (min-width: 1280px) {
+        display: flex;
+        gap: 119px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    @media screen and (min-width: 1280px) {
+        padding-left: 120px;
+    }
+}
+
+.title {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 64px;
+    color: $accent-text-color;
+
+    @media screen and (min-width: 768px) {
+        font-size: 102px;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.subtitle {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $text-color;
+    margin-left: -37px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+        letter-spacing: 0.18em;
+        margin-top: -8px;
+        margin-left: -54px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-left: -45px;
+        margin-top: 0;
+    }
+}
+
+.form {
+    padding: 48px 18px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 20px 0 rgba(170, 178, 197, 0.4);
+    background: $bg-color;
+    margin: 50px auto 0;
+
+    @media screen and (min-width: 768px) {
+        padding: 50px 85px;
+        width: 436px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin: 0;
+    }
+}
+
+.text {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: $text-color;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.google_center {
+    display: flex;
+    justify-content: center;
+}
+
+.google_wrap {
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+    border-radius: 26px;
+    background: $light-border-color;
+    width: 122px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.google_icon {
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.google_text {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: $accent-text-color;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: $accent-text-color;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.input {
+    padding: 17px 20px;
+    border-radius: 30px;
+    background: $input-color;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: $text-color;
+    border: none;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+
+    &::placeholder {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        color: $placeholder-color;
+    }
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.link {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: $text-color;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}

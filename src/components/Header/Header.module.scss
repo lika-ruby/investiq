@@ -1,0 +1,124 @@
+@use "../../styles/var.scss" as *;
+
+.header {
+    padding: 12px 0;
+    background-color: $bg-color;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.logo {
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @media screen and (min-width: 768px) {
+        gap: 20px;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.user {
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.avatar {
+    fill: $table-bg-color;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.name {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        color: $text-color;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.line {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+        height: 36px;
+        width: 1px;
+        background-color: $line-color;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.btn {
+    background-color: transparent;
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: $text-color;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.btn_text {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.logout {
+    fill: $text-color;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}

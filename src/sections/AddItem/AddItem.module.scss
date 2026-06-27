@@ -1,0 +1,350 @@
+@use "../../styles/var.scss" as *;
+
+.sect {
+    padding-top: 15px;
+
+    @media screen and (min-width: 768px) {
+        padding: 0;
+    }
+}
+
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+    outline: red dashed;
+    width: 320px;
+
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        width: auto;
+    }
+}
+
+.backlink {
+    display: block;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.arrowBack {
+    fill: #ff751d;
+}
+
+
+
+.form {
+    margin-top: 15px;
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        justify-content: space-between;
+        gap: 0;
+        flex-direction: row;
+
+    }
+}
+
+.top {
+    margin-bottom: 83px;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 39px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        gap: 29px;
+    }
+}
+
+.calendar {
+
+    @media screen and (min-width: 768px) {
+        fill: $text-color;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.date {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+        font-family: Roboto;
+        font-weight: 900;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $text-color;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        all: unset;
+        display: flex;
+
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.desc {
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: $text-color;
+    padding: 15px 20px;
+    border-radius: 16px 16px 0 0;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px 2px 1px 2px;
+    background-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        width: 192px;
+        border-style: solid;
+        border-color: $input-color;
+        border-width: 2px 1px 2px 1px;
+        border-radius: 16px 0 0 0;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 289px;
+    }
+
+    &::placeholder {
+        color: $filter-text-color;
+    }
+}
+
+.wrapper {
+    position: relative;
+}
+
+.category {
+    min-width: 280px;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    padding: 15px 20px;
+    border-radius: 0 0 16px 0;
+    border-style: solid;
+    border-color: #fff;
+    background-color: transparent;
+    border-width: 1px 2px 2px 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $filter-text-color;
+
+
+    @media screen and (min-width: 768px) {
+        border-color: $input-color;
+        border-radius: 0;
+        border-width: 2px 1px 2px 1px;
+        min-width: 171px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        min-width: 188px;
+        gap: 35px;
+    }
+
+    &.choosed {
+        color: $text-color;
+    }
+}
+
+.arrow {
+    transform: rotate(180deg);
+    fill: $filter-text-color;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+
+    &.open {
+        transform: rotate(0deg);
+    }
+}
+
+.list {
+    position: absolute;
+    top: 46px;
+    display: none;
+    border: 2px solid $table-bg-color;
+    box-shadow: 0 3px 4px 0 rgba(170, 178, 197, 0.4);
+    background: $bg-color;
+    z-index: 3;
+
+    @media screen and (min-width: 768px) {
+        border: 2px solid $table-bg-color;
+        box-shadow: 0 3px 4px 0 rgba(170, 178, 197, 0.4);
+        background: $bg-color;
+    }
+
+    @media screen and (min-width: 1280px) {}
+
+    &.open {
+        display: block;
+    }
+}
+
+.item {
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+
+.btn {
+    padding: 10px 20px;
+    width: 280px;
+    background: $bg-color;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: $filter-text-color;
+    text-align: left;
+
+    @media screen and (min-width: 768px) {
+        padding: 10px 20px;
+        width: 171px;
+        background: $bg-color;
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        color: $filter-text-color;
+        text-align: left;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 184px;
+    }
+}
+
+.sumWrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: end;
+    border: 2px solid #fff;
+    border-radius: 22px;
+    padding: 0 20px;
+    width: 183px;
+    overflow: hidden;
+    margin-top: 30px;
+
+    @media screen and (min-width: 768px) {
+        all: unset;
+        position: relative;
+    }
+}
+
+.sum {
+    display: block;
+    max-width: 108px;
+    border: none;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: right;
+    color: #000;
+    background-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        padding: 15px 50px 15px 20px;
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        color: $text-color;
+        border-style: solid;
+        border-color: $input-color;
+        border-width: 2px 2px 2px 1px;
+        border-radius: 0 16px 16px 0;
+        width: 104px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 124px;
+    }
+
+
+    &::placeholder {
+        color: #000;
+
+        @media screen and (min-width: 768px) {
+            color: $filter-text-color;
+        }
+    }
+}
+
+.line {
+    display: block;
+    min-width: 2px;
+    height: 40px;
+    background-color: #fff;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+}
+
+.calculator {
+    min-width: 20px;
+    min-height: 20px;
+    fill: $text-color;
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.btns {
+    display: flex;
+    gap: 15px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}

@@ -1,0 +1,145 @@
+@use "../../styles/var.scss" as *;
+
+.sect {
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.wrap {
+    @media screen and (min-width: 768px) {
+        padding: 22px 32px 30px;
+        border-radius: 30px;
+        box-shadow: 0 10px 60px 0 rgba(170, 178, 197, 0.2);
+        background: #fff;
+        position: relative;
+    }
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.choose {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    justify-content: center;
+    margin-bottom: 22px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.arrow {
+    background-color: transparent;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.arrowL {
+    fill: #ff751d;
+    transform: rotate(-90deg);
+}
+
+.arrowR {
+    fill: #ff751d;
+    transform: rotate(90deg);
+}
+
+.subtitle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 2px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {
+        width: 613px;
+        margin: 0 auto;
+    }
+}
+
+.item {
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.btn {
+    background-color: transparent;
+    width: 92px;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.sum {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #52555f;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.icon {
+    fill: #071f41;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.btn:focus .icon {
+    fill: #ff751d;
+}
+
+.category {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #52555f;
+    margin-top: 8px;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
+
+.box {
+    border-radius: 20px;
+    width: 59px;
+    height: 46px;
+    background: #f5f6fb;
+    position: absolute;
+    top: 31px;
+    transform: translate(-50%);
+    left: 50%;
+    z-index: -1;
+}
+
+.btn:focus .box {
+    background: #ffdac0;
+}
