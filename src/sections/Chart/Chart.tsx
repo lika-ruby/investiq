@@ -90,7 +90,7 @@ export const Chart = ({ category, type, date }: ChartProps) => {
           ? { topRight: 10, bottomRight: 10, topLeft: 0, bottomLeft: 0 }
           : { topLeft: 10, topRight: 10, bottomLeft: 0, bottomRight: 0 },
         borderSkipped: false,
-        barPercentage: isMobile ? 0.35 : 0.6, // Тонші стовпчики, щоб звільнити місце для тексту над ними
+        barPercentage: isMobile ? 0.35 : 0.6,
         maxBarThickness: isMobile ? undefined : 38,
       },
     ],
@@ -105,18 +105,13 @@ export const Chart = ({ category, type, date }: ChartProps) => {
       legend: { display: false },
       tooltip: { enabled: true },
       datalabels: {
-        // На десктопі показуємо завжди. На мобілці показуємо ТІЛЬКИ якщо значення більше 0
         display: (context) => {
           return isMobile
             ? (context.dataset.data[context.dataIndex] as number) > 0
             : true;
         },
-        // КЛЮЧОВЕ НАЛАШТУВАННЯ ДЛЯ МОБІЛКИ:
-        // Притискаємо суму до правого кінця стовпчика (align: "right", anchor: "end")
         align: isMobile ? "right" : "top",
         anchor: "end",
-        // На десктопі зміщуємо вгору над стовпчиком.
-        // На мобілці offset: 0, але за допомогою підняття осі Y назва і ціна стануть на один рівень.
         offset: isMobile ? 0 : 8,
         formatter: (value) => {
           return `${new Intl.NumberFormat("uk-UA").format(value)} грн`;
@@ -126,9 +121,9 @@ export const Chart = ({ category, type, date }: ChartProps) => {
           size: 12,
         },
         color: "#52555F",
-        // Додатковий зсув для мобілки, щоб вирівняти суму по висоті з назвою
+
         ...(isMobile && {
-          padding: { bottom: 24 }, // Піднімає суму вгору рівно на рівень дзеркального тексту осі Y
+          padding: { bottom: 24 },
         }),
       },
     },
@@ -137,16 +132,16 @@ export const Chart = ({ category, type, date }: ChartProps) => {
       y: {
         display: true,
         grid: {
-          display: !isMobile, // Горизонтальна сітка тільки для десктопа/планшета
+          display: !isMobile,
           color: "#F5F6FB",
         },
         border: { display: false },
         ticks: {
-          display: isMobile, // Вмикаємо назви товарів на мобілці через вісь Y
+          display: isMobile,
           color: "#52555F",
           font: { size: 12 },
-          mirror: true, // Закидає текст назви всередину графіка (він починається від 0 лінії)
-          labelOffset: -14, // Піднімає назву вгору над стовпчиком
+          mirror: true,
+          labelOffset: -14,
           crossAlign: "start",
         },
       },
@@ -165,8 +160,7 @@ export const Chart = ({ category, type, date }: ChartProps) => {
 
     layout: {
       padding: isMobile
-        ? // Важливо дати padding.right, щоб сума в кінці стовпчика мала простір і не ховалася за край картки
-          { right: 85, top: 25, bottom: 15, left: 10 }
+        ? { right: 85, top: 25, bottom: 15, left: 10 }
         : { top: 35, left: 10, right: 10, bottom: 10 },
     },
   };

@@ -85,7 +85,7 @@ export const Table = ({ type }: TableProps) => {
                   </button>
                 </div>
               </li>
-              <div className={styles}></div>
+              <div className={styles.line}></div>
             </>
           ))}
         </ul>
