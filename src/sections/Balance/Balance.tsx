@@ -153,7 +153,7 @@ export const Balance = ({
                 <button
                   className={styles.arrow}
                   type="button"
-                  onClick={() => setMonthOffset((p) => p + 1)}
+                  onClick={() => setMonthOffset?.((p = 0) => p + 1)}
                 >
                   <svg className={styles.arrowL} width="11" height="6">
                     <use href="#arrow-down"></use>
@@ -164,13 +164,13 @@ export const Balance = ({
                   <p className={styles.text}>Поточний період</p>
 
                   <p className={styles.data}>
-                    {date.toLocaleDateString("uk-UA", {
+                    {date?.toLocaleDateString("uk-UA", {
                       month: "long",
                     })}
                   </p>
 
                   <p className={styles.data}>
-                    {date.toLocaleDateString("uk-UA", {
+                    {date?.toLocaleDateString("uk-UA", {
                       year: "numeric",
                     })}
                   </p>
@@ -179,8 +179,8 @@ export const Balance = ({
                 <button
                   className={styles.arrow}
                   type="button"
-                  disabled={monthOffset === 0}
-                  onClick={() => setMonthOffset((p) => p - 1)}
+                  disabled={(monthOffset ?? 0) === 0}
+                  onClick={() => setMonthOffset?.((p = 0) => p - 1)}
                 >
                   <svg className={styles.arrowR} width="11" height="6">
                     <use href="#arrow-down"></use>
