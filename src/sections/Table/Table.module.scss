@@ -3,7 +3,7 @@
 .container {
     display: block;
     width: 100%;
-    height: 346px;
+    max-height: 346px;
     overflow-y: scroll;
     padding-right: 4px;
 
@@ -98,12 +98,19 @@
     fill: #a6b1c7;
 }
 
+.noresults {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #52555f;
+    margin-top: 24px;
+    text-align: center;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     .container {
-        height: 346px;
-    }
-
-    .container {
+        max-height: 346px;
         padding: 12px 16px;
     }
 }

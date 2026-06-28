@@ -2,8 +2,10 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { useEffect, lazy, Suspense } from "react";
 
-import { initAuthListener } from "./redux/users/usersOperations";
 import { useSelector } from "react-redux";
+
+import { initAuthListener } from "./redux/users/usersOperations";
+
 import { selectIsAuth, selectAuthLoading } from "./redux/users/usersSelectors";
 
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
@@ -27,8 +29,16 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={isAuth ? <Navigate to="/" replace /> : <RegisterPage />}
+        />
+
+        <Route
+          path="/login"
+          element={isAuth ? <Navigate to="/" replace /> : <LoginPage />}
+        />
+
         <Route
           path="/"
           element={isAuth ? <Layout /> : <Navigate to="/register" replace />}
@@ -36,8 +46,11 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path=":type" element={<HomePage />} />
           <Route path=":type/add" element={<AddPage />} />
-          <Route path="calculations" element={<CalculationsPage />} />
-          <Route path="calculations/:type" element={<CalculationsPage />} />
+
+          <Route path="calculations">
+            <Route index element={<CalculationsPage />} />
+            <Route path=":type" element={<CalculationsPage />} />
+          </Route>
         </Route>
       </Routes>
     </Suspense>

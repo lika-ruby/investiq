@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeOperation, setLoading } from "../../redux/users/usersSlice";
 import { selectOperations } from "../../redux/users/usersSelectors";
 import { delOperation } from "../../redux/users/usersOperations";
+import { Modal } from "../../components/Modal/Modal";
 
 type TableProps = {
   type: "expense" | "income";
@@ -52,6 +53,17 @@ export const Table = ({ type }: TableProps) => {
     return `${day}.${month}.${year}`;
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOp, setSelectedOp] = useState<any>(null);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       {isMobile ? (
@@ -77,7 +89,10 @@ export const Table = ({ type }: TableProps) => {
                   <button
                     className={styles.del}
                     type="button"
-                    onClick={() => handleDelete(op)}
+                    onClick={() => {
+                      openModal();
+                      setSelectedOp(op);
+                    }}
                   >
                     <svg className={styles.icon} width="18" height="18">
                       <use href="#delete"></use>
@@ -88,6 +103,9 @@ export const Table = ({ type }: TableProps) => {
               <div className={styles.line}></div>
             </>
           ))}
+          {filteredOps.length === 0 && (
+            <p className={styles.noresults}>У вас поки що немає операцій</p>
+          )}
         </ul>
       ) : (
         <div className={styles.container}>
@@ -120,7 +138,10 @@ export const Table = ({ type }: TableProps) => {
                     <button
                       className={styles.del}
                       type="button"
-                      onClick={() => handleDelete(op)}
+                      onClick={() => {
+                        openModal();
+                        setSelectedOp(op);
+                      }}
                     >
                       <svg className={styles.icon} width="18" height="18">
                         <use href="#delete"></use>
@@ -131,8 +152,22 @@ export const Table = ({ type }: TableProps) => {
               ))}
             </tbody>
           </table>
+          {filteredOps.length === 0 && (
+            <p className={styles.noresults}>У вас поки що немає операцій</p>
+          )}
         </div>
       )}
+      <Modal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        type={"operation"}
+        success={() => {
+          if (selectedOp) {
+            handleDelete(selectedOp);
+            closeModal();
+          }
+        }}
+      />
     </>
   );
 };

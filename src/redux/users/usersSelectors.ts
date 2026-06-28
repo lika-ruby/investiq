@@ -1,9 +1,13 @@
-import { store } from "../store";
+export const selectUser = (state: any) => state.auth.user;
 
-export const selectUser = () => store.getState().auth.user;
-export const selectIsAuth = () => Boolean(store.getState().auth.user);
-export const selectAuthLoading = () => store.getState().auth.loading;
-export const selectAuthError = () => store.getState().auth.error;
-export const selectOperations = () => store.getState().auth.user?.operations;
-export const selectStartingBalance = () =>
-  store.getState().auth.user?.startingBalance ?? 0;
+export const selectIsAuth = (state: any) => Boolean(state.auth.user);
+
+export const selectAuthLoading = (state: any) => state.auth.loading;
+
+export const selectAuthError = (state: any) => state.auth.error;
+
+export const selectOperations = (state: any) =>
+  state.auth.user?.operations ?? [];
+
+export const selectStartingBalance = (state: any) =>
+  state.auth.user?.startingBalance ?? 0;

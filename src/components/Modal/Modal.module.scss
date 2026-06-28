@@ -1,0 +1,61 @@
+@use "../../styles/var.scss" as *;
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal {
+    padding: 32px 48px 40px;
+    box-shadow: 10px 10px 30px 0 rgba(82, 85, 95, 0.4);
+    background: #fff;
+    border-radius: 30px;
+    max-width: 280px;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+        padding: 52px 58px 60px;
+        box-shadow: 10px 10px 30px 0 rgba(82, 85, 95, 0.4);
+        background: #fff;
+        border-radius: 30px;
+        max-width: 380px;
+        position: relative;
+    }
+}
+
+.text {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #52555f;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 19px;
+    right: 19px;
+    background-color: transparent;
+}
+
+.icon {
+    fill: #52555f;
+}

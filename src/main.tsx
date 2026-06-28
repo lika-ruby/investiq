@@ -12,7 +12,7 @@ import { store } from "./redux/store";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/investiq">
+      <BrowserRouter basename="/investiq/">
         <App />
       </BrowserRouter>
     </Provider>

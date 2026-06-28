@@ -12,7 +12,6 @@ export default function HomePage() {
     <div style={{ position: "relative" }}>
       <Balance page="home" />
       <MainView type={currentType} />
-
       <Bg />
     </div>
   );
