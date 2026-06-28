@@ -1,0 +1,1 @@
+import{D as e,x as t}from"./index-BdLi3upQ.js";import{t as n}from"./Bg-B2db_lrF.js";import{t as r}from"./Auth-D0DbK5Rm.js";var i=e(),a=t();function o(){let e=(0,i.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,a.jsxs)(`div`,{style:{position:`relative`},children:[(0,a.jsx)(r,{type:`register`}),(0,a.jsx)(n,{})]}),e[0]=t):t=e[0],t}export{o as default};
