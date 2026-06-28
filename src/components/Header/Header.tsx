@@ -44,8 +44,10 @@ export const Header = () => {
             {user !== null ? (
               <div className={styles.right}>
                 <div className={styles.user}>
-                  <div className={styles.avatar}>{user.displayName[0]}</div>
-                  <p className={styles.name}>{user.displayName}</p>
+                  <div className={styles.avatar}>
+                    {user?.displayName?.[0] ?? "U"}
+                  </div>
+                  <p className={styles.name}>{user?.displayName ?? "User"}</p>
                 </div>
                 <div className={styles.line}></div>
                 <button

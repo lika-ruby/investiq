@@ -1,13 +1,16 @@
-export const selectUser = (state: any) => state.auth.user;
+import type { RootState } from "../store";
+import type { Operation } from "../types/auth";
 
-export const selectIsAuth = (state: any) => Boolean(state.auth.user);
+export const selectUser = (state: RootState) => state.auth.user;
 
-export const selectAuthLoading = (state: any) => state.auth.loading;
+export const selectIsAuth = (state: RootState) => Boolean(state.auth.user);
 
-export const selectAuthError = (state: any) => state.auth.error;
+export const selectAuthLoading = (state: RootState) => state.auth.loading;
 
-export const selectOperations = (state: any) =>
+export const selectAuthError = (state: RootState) => state.auth.error;
+
+export const selectOperations = (state: RootState): Operation[] =>
   state.auth.user?.operations ?? [];
 
-export const selectStartingBalance = (state: any) =>
+export const selectStartingBalance = (state: RootState): number =>
   state.auth.user?.startingBalance ?? 0;

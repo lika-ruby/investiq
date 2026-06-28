@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Operation {
+export type Operation = {
   id: string;
   date: string;
   desc: string;
   category: string;
   sum: number;
   type: "expense" | "income";
-}
+};
 
 interface AuthUser {
   uid: string;
